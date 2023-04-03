@@ -1,0 +1,14 @@
+﻿<Window x:Class="SellSn.Client.Windows.Windows.OAuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:viewModels="clr-namespace:SellSn.Client.Windows.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        FontSize="14"
+        Style="{DynamicResource LightWindow}"
+        Title="Log-in with Discord" Height="800" Width="650">
+    <wv2:WebView2 Name="WebView" Source="https://google.com" />
+</Window>
