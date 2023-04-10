@@ -2,15 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Authors>Light Technologies, LLC.</Authors>
-        <Product>LightVPN Windows Client</Product>
-        <ProductName>LightVPN Windows Client</ProductName>
-        <AssemblyName>lightvpn64-debug</AssemblyName>
+        <Authors>Comtechna, UAB.</Authors>
+        <Product>SellSN-VPN Windows Client</Product>
+        <ProductName>SellSN-VPN Windows Client</ProductName>
+        <AssemblyName>SellSN-VPN64-debug</AssemblyName>
         <Version>3.0.0.1</Version>
-        <AssemblyTitle>Debugging utilities for the LightVPN client</AssemblyTitle>
-        <Copyright>Copyright 2021 (C) Light Technologies, LLC.</Copyright>
+        <AssemblyTitle>Debugging utilities for the SellSN-VPN client</AssemblyTitle>
+        <Copyright>Copyright 2023 (C) Comtechna, UAB.</Copyright>
         <PackageProjectUrl>https://github.com/LightTechnologies</PackageProjectUrl>
-        <RootNamespace>LightVPN.Client.Debug</RootNamespace>
+        <RootNamespace>SellSN-VPN.Client.Debug</RootNamespace>
     </PropertyGroup>
 
 </Project>

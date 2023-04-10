@@ -2,13 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Authors>Light Technologies, LLC.</Authors>
-        <Product>LightVPN Windows Client</Product>
-        <ProductName>LightVPN Windows Client</ProductName>
-        <AssemblyName>lightvpn64-discord</AssemblyName>
+        <Authors>Comtechna, UAB.</Authors>
+        <Product>SellSN-VPN Windows Client</Product>
+        <ProductName>SellSN-VPN Windows Client</ProductName>
+        <AssemblyName>SellSN-VPN64-discord</AssemblyName>
         <Version>3.0.0.1</Version>
-        <AssemblyTitle>Discord rich presence manager for the LightVPN Windows Client</AssemblyTitle>
-        <Copyright>Copyright 2021 (C) Light Technologies, LLC.</Copyright>
+        <AssemblyTitle>Discord rich presence manager for the SellSN-VPN Windows Client</AssemblyTitle>
+        <Copyright>Copyright 2023 (C) Comtechna, UAB.</Copyright>
         <PackageProjectUrl>https://github.com/LightTechnologies</PackageProjectUrl>
     </PropertyGroup>
 

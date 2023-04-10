@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-using LightVPN.Client.Debug;
 using MaterialDesignThemes.Wpf;
+using SellSn.Client.Debug;
 using SellSn.Client.Windows.Configuration.Models;
 using SellSn.Client.Windows.Models;
 
@@ -52,10 +52,10 @@ internal static class ThemeManager
         }
         catch (Exception e)
         {
-            DebugLogger.Write("lvpn-client-win-thememan", $"wtf?!?! {e}");
+            DebugLogger.Write("svpn-client-win-thememan", $"wtf?!?! {e}");
             MessageBox.Show(
-                "Something went wrong when processing theme settings, please report this exception, and the log file to LightVPN support.",
-                "LightVPN", MessageBoxButton.OK, MessageBoxImage.Error);
+                "Something went wrong when processing theme settings, please report this exception, and the log file to SellSN-VPN support.",
+                "SellSN-VPN", MessageBoxButton.OK, MessageBoxImage.Error);
             Application.Current.Shutdown();
         }
     }

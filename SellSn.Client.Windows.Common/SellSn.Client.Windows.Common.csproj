@@ -2,13 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Authors>Light Technologies, LLC.</Authors>
-        <Product>LightVPN Windows Client</Product>
-        <ProductName>LightVPN Windows Client</ProductName>
+        <Authors>Comtechna, UAB.</Authors>
+        <Product>SellSN-VPN Windows Client</Product>
+        <ProductName>SellSN-VPN Windows Client</ProductName>
         <Version>3.0.0.1</Version>
-        <AssemblyName>lightvpn64-common</AssemblyName>
-        <AssemblyTitle>Common resources for the LightVPN Windows Client</AssemblyTitle>
-        <Copyright>Copyright 2021 (C) Light Technologies, LLC.</Copyright>
+        <AssemblyName>sellsnvpn64-common</AssemblyName>
+        <AssemblyTitle>Common resources for the SellSN-VPN Windows Client</AssemblyTitle>
+        <Copyright>Copyright 2023 (C) Comtechna, UAB.</Copyright>
         <PackageProjectUrl>https://github.com/LightTechnologies</PackageProjectUrl>
     </PropertyGroup>
 

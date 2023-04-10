@@ -13,4 +13,6 @@ public interface IApiClient
     Task<byte[]> GetOpenVpnArchiveAsync(CancellationToken cancellationToken = default);
     Task<byte[]> GetDriverArchiveAsync(CancellationToken cancellationToken = default);
     Task<byte[]> GetConfigArchiveAsync(CancellationToken cancellationToken = default);
+    Task<byte[]> GetWindowsInstallerAsync(CancellationToken cancellationToken = default);
+    Task<bool> CheckVersionAsync(CancellationToken cancellationToken = default);
 }

@@ -10,5 +10,5 @@
         FontSize="14"
         Style="{DynamicResource LightWindow}"
         Title="Log-in with Discord" Height="800" Width="650">
-    <wv2:WebView2 Name="WebView" Source="https://google.com" />
+    <wv2:WebView2 Name="WebView" Source="https://sellsn.cloud" />
 </Window>

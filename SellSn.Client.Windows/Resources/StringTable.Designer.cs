@@ -60,7 +60,7 @@ namespace SellSn.Client.Windows.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /Resources/Images/lightvpn-success.ico.
+        ///   Looks up a localized string similar to /Resources/Images/svpn-success.ico.
         /// </summary>
         internal static string TRAY_ICON_CONNECTED {
             get {
@@ -69,7 +69,7 @@ namespace SellSn.Client.Windows.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /Resources/Images/lightvpn-danger.ico.
+        ///   Looks up a localized string similar to /Resources/Images/svpn-danger.ico.
         /// </summary>
         internal static string TRAY_ICON_DISCONNECTED {
             get {

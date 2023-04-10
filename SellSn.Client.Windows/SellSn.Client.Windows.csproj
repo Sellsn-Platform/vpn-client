@@ -6,7 +6,7 @@
         <UseWPF>true</UseWPF>
         <StartupObject>SellSn.Client.Windows.Startup</StartupObject>
         <RunPostBuildEvent>Always</RunPostBuildEvent>
-        <Version>3.0.0.1</Version>
+        <Version>1.0.0.0</Version>
         <Authors>Comtechna, UAB.</Authors>
         <Product>SellSN VPN Windows Client</Product>
       <ProductName>SellSN VPN Windows Client</ProductName>
@@ -314,12 +314,12 @@
       <None Remove="Resources\Fonts\Ubuntu-Medium.ttf" />
       <None Remove="Resources\Fonts\Ubuntu-MediumItalic.ttf" />
       <None Remove="Resources\Fonts\Ubuntu-Regular.ttf" />
-      <None Remove="Resources\Images\lightvpn-purple-100.png" />
-      <None Remove="Resources\Images\lightvpn-purple-20.png" />
-      <None Remove="Resources\Images\lightvpn-purple-title.png" />
-      <None Remove="Resources\Images\lightvpn-purple.png" />
+      <None Remove="Resources\Images\svpn-purple-100.png" />
+      <None Remove="Resources\Images\svpn-purple-20.png" />
+      <None Remove="Resources\Images\svpn-purple-title.png" />
+      <None Remove="Resources\Images\svpn-purple.png" />
       <None Remove="Resources\Images\svpn-white.png" />
-      <None Remove="Resources\Images\lightvpn.ico" />
+      <None Remove="Resources\Images\svpn.ico" />
       <None Remove="Resources\Images\ui-glyph.png" />
     </ItemGroup>
 
@@ -646,8 +646,8 @@
       <Resource Include="Resources\Fonts\Ubuntu-MediumItalic.ttf" />
       <Resource Include="Resources\Fonts\Ubuntu-Regular.ttf" />
       <Resource Include="Resources\Images\ui-glyph.png" />
-      <None Remove="Resources\Images\lightvpn-success.ico" />
-      <None Remove="Resources\Images\lightvpn-danger.ico" />
+      <None Remove="Resources\Images\svpn-success.ico" />
+      <None Remove="Resources\Images\svpn-danger.ico" />
       <None Remove="Resources\Images\svpn.ico" />
       <Resource Include="Resources\Images\svpn.ico" />
       <None Remove="Resources\Images\svpn.png" />

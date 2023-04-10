@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Threading;
 using System.Threading.Tasks;
-using LightVPN.Client.Debug;
+using SellSn.Client.Debug;
 using SellSn.Client.OpenVPN.Exceptions;
 using SellSn.Client.OpenVPN.Interfaces;
 using SellSn.Client.Windows.Common;
@@ -44,7 +44,7 @@ public sealed class OpenVpnService : IOpenVpnService
 
         if (files.Length == 0 || !files.Any(x => x.Contains(id)))
         {
-            DebugLogger.Write("lvpn-client-services-ovpnwrapper",
+            DebugLogger.Write("svpn-client-services-ovpnwrapper",
                 "oh shit!?! looks like the system cannot locate the config, what now!??! that's right sir, we throw a phat exception");
             throw new InvalidOperationException(
                 "Cannot fetch the server configuration, you may need to refresh your cache, you can do so in settings.");
@@ -53,7 +53,7 @@ public sealed class OpenVpnService : IOpenVpnService
         var configFileName = files.FirstOrDefault(x => x.Contains(id));
         if (string.IsNullOrWhiteSpace(configFileName))
         {
-            DebugLogger.Write("lvpn-client-services-ovpnwrapper",
+            DebugLogger.Write("svpn-client-services-ovpnwrapper",
                 "looks like this system has done some sorcery and the filename found is null or whitespaces, wtf!?!?!?!");
 
             return;

@@ -24,9 +24,9 @@
         </value>
     </resheader>
     <data name="TRAY_ICON_CONNECTED" xml:space="preserve">
-        <value>/Resources/Images/lightvpn-success.ico</value>
+        <value>/Resources/Images/svpn-success.ico</value>
     </data>
     <data name="TRAY_ICON_DISCONNECTED" xml:space="preserve">
-        <value>/Resources/Images/lightvpn-danger.ico</value>
+        <value>/Resources/Images/svpn-danger.ico</value>
     </data>
 </root>

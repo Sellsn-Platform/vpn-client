@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using LightVPN.Client.Debug;
 using SellSn.Client.Auth.Interfaces;
+using SellSn.Client.Debug;
 using SellSn.Client.Windows.Common;
 using SellSn.Client.Windows.Common.Models;
 using SellSn.Client.Windows.Common.Utils;
@@ -42,7 +42,7 @@ public sealed class CacheService : ICacheService
             return;
         }
 
-        DebugLogger.Write("lvpn-client-services-cacheman",
+        DebugLogger.Write("svpn-client-services-cacheman",
             "cache call has been ignored for ovpn binaries");
     }
 
@@ -66,7 +66,7 @@ public sealed class CacheService : ICacheService
         }
         catch (Exception e)
         {
-            DebugLogger.Write("lvpn-client-services-cacheman", $"api fetch from file cache exception: {e}");
+            DebugLogger.Write("svpn-client-services-cacheman", $"api fetch from file cache exception: {e}");
             return null;
         }
     }
@@ -82,7 +82,7 @@ public sealed class CacheService : ICacheService
 
             if (File.Exists(fileLocation) && !force)
             {
-                DebugLogger.Write("lvpn-client-services-cacheman",
+                DebugLogger.Write("svpn-client-services-cacheman",
                     "checking last server cache time");
 
                 var serverCache =
@@ -92,7 +92,7 @@ public sealed class CacheService : ICacheService
                 if (DateTime.Now < serverCache?.LastCache.AddHours(12)) return;
             }
 
-            DebugLogger.Write("lvpn-client-services-cacheman",
+            DebugLogger.Write("svpn-client-services-cacheman",
                 "caching new list of servers");
 
             var o = new ServerCache
@@ -106,7 +106,7 @@ public sealed class CacheService : ICacheService
         }
         catch (Exception e)
         {
-            DebugLogger.Write("lvpn-client-services-cacheman", $"api write cache exception: {e}");
+            DebugLogger.Write("svpn-client-services-cacheman", $"api write cache exception: {e}");
         }
     }
 
@@ -130,7 +130,7 @@ public sealed class CacheService : ICacheService
             return;
         }
 
-        DebugLogger.Write("lvpn-client-services-cacheman",
+        DebugLogger.Write("svpn-client-services-cacheman",
             "cache call has been ignored for ovpn drivers");
     }
 
@@ -187,13 +187,13 @@ public sealed class CacheService : ICacheService
             return;
         }
 
-        DebugLogger.Write("lvpn-client-services-cacheman",
+        DebugLogger.Write("svpn-client-services-cacheman",
             "cache call has been ignored for ovpn configs");
     }
 
     private static void VerifyCacheIntegrity()
     {
-        DebugLogger.Write("lvpn-client-services-cacheman",
+        DebugLogger.Write("svpn-client-services-cacheman",
             "verifying cache integrity");
 
         DirectoryUtils.DirectoryNotExistsCreate(Globals.AppCachePath);

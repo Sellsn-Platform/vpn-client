@@ -11,7 +11,7 @@ namespace SellSn.Client.Windows.Common;
 public static class Globals
 {
     /// <summary>
-    ///     Directory where everything LightVPN is stored
+    ///     Directory where everything SellSN-VPN is stored
     /// </summary>
     private static readonly string AppSettingsDirectory =
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SellSN");
@@ -41,12 +41,12 @@ public static class Globals
     public static readonly string OpenVpnDriversPath = Path.Combine(AppSettingsDirectory, "OpenVPNDrivers");
 
     /// <summary>
-    ///     Path to the LightVPN configuration
+    ///     Path to the SellSN-VPN configuration
     /// </summary>
     public static readonly string AppSettingsPath = Path.Combine(AppSettingsDirectory, "config.json");
 
     /// <summary>
-    ///     Path to the LightVPN authentication data file
+    ///     Path to the SellSN-VPN authentication data file
     /// </summary>
     public static readonly string AuthDataPath = Path.Combine(AppSettingsDirectory, "session.bin");
 
@@ -73,7 +73,7 @@ public static class Globals
     /// <summary>
     ///     True if this build is a beta build, false if it's stable
     /// </summary>
-    public static bool IsBeta { get; set; } = true;
+    public static bool IsBeta { get; set; } = false;
 
     /// <summary>
     ///     Instance of a TrayViewModel so we can modify its properties from other ViewModels

@@ -1,6 +1,8 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
 using SellSn.Client.Auth.Interfaces;
+using SellSn.Client.OpenVPN.Interfaces;
+using SellSn.Client.OpenVPN.Utils;
 using SellSn.Client.Windows.Common;
 using SellSn.Client.Windows.Services.Interfaces;
 using SellSn.Client.Windows.Utils;
@@ -79,17 +81,30 @@ internal sealed class LoginViewModel : WindowViewModel
                     {
                         IsAuthenticating = true;
                         
+                        StatusText = "Awaiting completion";
                         var window = new OAuthWindow(Globals.Container.GetInstance<IApiClient>());
                         window.ShowDialog();
 
+                        StatusText = "Signing in";
                         var user = await Globals.Container.GetInstance<IApiClient>().GetProfileAsync();
                         Globals.Profile = user;
+                        
+                        StatusText = "Checking for updates";
+                        await Globals.Container.GetInstance<IVersionClient>().CheckAndInstallUpdatesAsync();
 
                         // Cache OVPN binaries
+                        StatusText = "Downloading files";
                         await Globals.Container.GetInstance<ICacheService>().CacheOpenVpnBinariesAsync();
 
                         // Cache OVPN configs
                         await Globals.Container.GetInstance<ICacheService>().CacheServersAsync();
+                        
+                        // Install drivers if not installed
+                        if (!TapManager.IsDriverInstalled())
+                        {
+                            StatusText = "Installing drivers";
+                            await Globals.Container.GetInstance<IVpnManager>().TapManager.InstallTapDriverAsync();
+                        }
 
                         var loginWindow = (LoginWindow)Globals.LoginWindow;
 

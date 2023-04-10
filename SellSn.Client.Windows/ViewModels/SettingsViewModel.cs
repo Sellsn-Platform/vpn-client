@@ -3,8 +3,8 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
-using LightVPN.Client.Debug;
 using MaterialDesignThemes.Wpf;
+using SellSn.Client.Debug;
 using SellSn.Client.Discord.Interfaces;
 using SellSn.Client.OpenVPN.Interfaces;
 using SellSn.Client.OpenVPN.Utils;
@@ -119,7 +119,7 @@ internal sealed class SettingsViewModel : BaseViewModel
     }
 
     public string VersionString { get; set; } =
-        $"{(Globals.IsBeta ? "beta" : "stable")} svpn-{Assembly.GetEntryAssembly()?.GetName().Version} {HostVersion.GetOsVersion()}";
+        $"{(Globals.IsBeta ? "beta" : "stable")} svpn-{Assembly.GetEntryAssembly()?.GetName().Version} {HostVersion.GetOsVersion()} - Copyright 2023 (C) Comtechna, UAB.";
 
     public ICommand HandleConfigChanges
     {

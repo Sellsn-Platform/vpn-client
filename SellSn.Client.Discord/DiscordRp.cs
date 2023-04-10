@@ -35,7 +35,12 @@ public sealed class DiscordRp : IDiscordRp
                 new Button
                 {
                     Label = "Visit us",
-                    Url = "https://lightvpn.org"
+                    Url = "https://sellsn.cloud/"
+                },
+                new Button
+                {
+                    Label = "Discord",
+                    Url = "https://discord.gg/sellsn"
                 }
             },
             Assets = new Assets

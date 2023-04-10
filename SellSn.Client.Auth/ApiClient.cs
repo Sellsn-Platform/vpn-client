@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Reflection;
 using SellSn.Client.Auth.Interfaces;
 using SellSn.Client.Auth.Models;
 using SellSn.Client.Cryptography;
@@ -12,7 +13,7 @@ namespace SellSn.Client.Auth;
 public class ApiClient : IApiClient
 {
     private readonly CookieContainer _cookieContainer = new();
-    public const string WebUrl = "https://141.95.19.80/";
+    public const string WebUrl = "https://sellsn.cloud/";
     private readonly HttpClient _client;
 
     public ApiClient()
@@ -32,7 +33,7 @@ public class ApiClient : IApiClient
 
     public async Task<List<DisplayVpnServer>> GetServersAsync(CancellationToken cancellationToken = default)
     {
-        var res = await _client.GetFromJsonAsync<List<VpnServer>>("servers");
+        var res = await _client.GetFromJsonAsync<List<VpnServer>>("servers", cancellationToken: cancellationToken);
         return res?.Select(x => new DisplayVpnServer
         {
             Country = x.Country,
@@ -58,6 +59,21 @@ public class ApiClient : IApiClient
     {
         var res = await _client.GetByteArrayAsync("download?platform=ovpn", cancellationToken);
         return res;
+    }
+
+    public async Task<byte[]> GetWindowsInstallerAsync(CancellationToken cancellationToken = default)
+    {
+        var res = await _client.GetByteArrayAsync("download?platform=win", cancellationToken);
+        return res;
+    }
+
+    public async Task<bool> CheckVersionAsync(CancellationToken cancellationToken = default)
+    {
+        var res = await _client.GetFromJsonAsync<VersionData>("version?platform=win", cancellationToken);
+        var ver = Version.Parse(res?.Version ?? "1.0.0.0");
+
+        return Assembly.GetEntryAssembly()?.GetName().Version >= ver;
+        // We're out of date
     }
     
     public async Task<byte[]> GetDriverArchiveAsync(CancellationToken cancellationToken = default)

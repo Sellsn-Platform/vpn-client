@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 
-namespace LightVPN.Client.Debug;
+namespace SellSn.Client.Debug;
 
 public static class DebugLogger
 {
     public static readonly string DebugLogLocation = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-        "LightVPN", "debug.log");
+        "SellSN", "debug.log");
 
     public static void Write(string source, string log)
     {

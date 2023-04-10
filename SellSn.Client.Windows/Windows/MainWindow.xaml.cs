@@ -34,8 +34,8 @@ internal sealed partial class MainWindow : Window, IDisposable
 
         /* if (Globals.IsBeta)
             MessageBox.Show(
-                "This is a pre-release (beta) build of the LightVPN client, compiled on the 22nd of June 2021 (3:14 BST). This build is intended for use with intention of feedback on any issues or suggestions. Please make sure you keep up-to-date with the release cycles. This build should not be used to replace your stable build of LightVPN, and should be kept in a separate folder.",
-                "LightVPN beta notice", MessageBoxButton.OK, MessageBoxImage.Exclamation); */
+                "This is a pre-release (beta) build of the SellSN-VPN client, compiled on the 22nd of June 2023 (3:14 BST). This build is intended for use with intention of feedback on any issues or suggestions. Please make sure you keep up-to-date with the release cycles. This build should not be used to replace your stable build of SellSN-VPN, and should be kept in a separate folder.",
+                "SellSN-VPN beta notice", MessageBoxButton.OK, MessageBoxImage.Exclamation); */
 
         var settings = Globals.Container.GetInstance<IConfigurationManager<AppConfiguration>>().Read();
 

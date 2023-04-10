@@ -15,7 +15,7 @@ internal sealed class TrayViewModel : BaseViewModel
 {
     private ConnectionState _connectionState;
 
-    private string _trayIconToolTip = "LightVPN - Disconnected";
+    private string _trayIconToolTip = "SellSN-VPN - Disconnected";
 
     public TrayViewModel()
     {
@@ -147,7 +147,7 @@ internal sealed class TrayViewModel : BaseViewModel
     public string TrayIconSource =>
         ConnectionState switch
         {
-            ConnectionState.Connected => "Resources/Images/lightvpn-success.ico",
-            _ => "Resources/Images/lightvpn-danger.ico"
+            ConnectionState.Connected => "Resources/Images/svpn-success.ico",
+            _ => "Resources/Images/svpn-danger.ico"
         };
 }

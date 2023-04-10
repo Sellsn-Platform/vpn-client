@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using LightVPN.Client.Debug;
+using SellSn.Client.Debug;
 using SellSn.Client.OpenVPN.Resources;
 
 namespace SellSn.Client.OpenVPN.Utils;
@@ -50,11 +50,11 @@ internal sealed class ManagementSocketHandler : IDisposable
         _endPoint = CreateEndPoint();
         _socket = new Socket(_endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
-        DebugLogger.Write("lvpn-client-ovpn-mgmtsock", "attempting to establish connection to mgmt sock");
+        DebugLogger.Write("svpn-client-ovpn-mgmtsock", "attempting to establish connection to mgmt sock");
 
         await _socket.ConnectAsync(_endPoint, cancellationToken);
 
-        DebugLogger.Write("lvpn-client-ovpn-mgmtsock", $"awaiting task has completed, result: {IsConnected}");
+        DebugLogger.Write("svpn-client-ovpn-mgmtsock", $"awaiting task has completed, result: {IsConnected}");
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ internal sealed class ManagementSocketHandler : IDisposable
     {
         if (!IsConnected) await ConnectAsync(cancellationToken);
 
-        DebugLogger.Write("lvpn-client-ovpn-mgmtsock",
+        DebugLogger.Write("svpn-client-ovpn-mgmtsock",
             $"we're gonna send a buffer boys, sockflags = none, buff-len = {buffer.Length}");
         await _socket.SendAsync(Encoding.UTF8.GetBytes(buffer + "\r\n"), SocketFlags.None, cancellationToken);
     }
@@ -77,7 +77,7 @@ internal sealed class ManagementSocketHandler : IDisposable
     /// <param name="cancellationToken">The cancellation token</param>
     public async Task SendShutdownSignalAsync(CancellationToken cancellationToken = default)
     {
-        DebugLogger.Write("lvpn-client-ovpn-mgmtsock", "sending sigterm");
+        DebugLogger.Write("svpn-client-ovpn-mgmtsock", "sending sigterm");
         await SendDataAsync(StringTable.OVPN_SHUTDOWN_SIG, cancellationToken);
 
         Dispose();

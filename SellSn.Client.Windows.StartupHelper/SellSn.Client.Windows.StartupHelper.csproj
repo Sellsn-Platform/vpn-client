@@ -3,16 +3,16 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net7.0</TargetFramework>
-        <Authors>Light Technologies, LLC.</Authors>
-        <Description>Helps the LightVPN Windows client startup on device boot</Description>
-        <Product>LightVPN Windows client</Product>
-        <ProductName>LightVPN Startup Helper</ProductName>
+        <Authors>Comtechna, UAB.</Authors>
+        <Description>Helps the SellSN-VPN Windows client startup on device boot</Description>
+        <Product>SellSN-VPN Windows client</Product>
+        <ProductName>SellSN-VPN Startup Helper</ProductName>
         <AssemblyName>startupHelper</AssemblyName>
         <Version>1.0.0.2</Version>
-        <AssemblyTitle>LightVPN Startup Helper</AssemblyTitle>
-        <PackageId>LightVPN Startup Helper</PackageId>
+        <AssemblyTitle>SellSN-VPN Startup Helper</AssemblyTitle>
+        <PackageId>SellSN-VPN Startup Helper</PackageId>
         <NeutralLanguage>en</NeutralLanguage>
-        <Copyright>Copyright 2021 (C) Light Technologies, LLC.</Copyright>
+        <Copyright>Copyright 2023 (C) Comtechna, UAB.</Copyright>
         <PackageProjectUrl>https://github.com/LightTechnologies</PackageProjectUrl>
     </PropertyGroup>
 

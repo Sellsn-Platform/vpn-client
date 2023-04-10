@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using LightVPN.Client.Debug;
+using SellSn.Client.Debug;
 using SellSn.Client.Windows.Utils;
 
 namespace SellSn.Client.Windows.ViewModels;
@@ -66,7 +66,7 @@ internal class WindowViewModel : BaseViewModel
                 {
                     if (_window == null) return;
 
-                    DebugLogger.Write("lvpn-client-win-chrome-mvvm",
+                    DebugLogger.Write("svpn-client-win-chrome-mvvm",
                         "running this monstrosity of a conditional to determine how to toggle max");
 
                     WindowState = _window.WindowState;

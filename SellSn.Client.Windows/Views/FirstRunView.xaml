@@ -18,11 +18,11 @@
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Height="200" Width="135" Source="/Resources/Images/ui-glyph.png" VerticalAlignment="Top"
                    HorizontalAlignment="Center" />
-            <TextBlock Style="{StaticResource LightTitle}" Text="Redesigned experience" VerticalAlignment="Top"
+            <TextBlock Style="{StaticResource LightTitle}" Text="Welcome!" VerticalAlignment="Top"
                        HorizontalAlignment="Center" Margin="0,205,0,0" />
             <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"
                        Style="{StaticResource LightSmall}" TextWrapping="WrapWithOverflow" Margin="10,235,10,25"
-                       Text="Glide through the new experience with elegance and ease. The new user interface aims to unify your experience and make it as simple as a click." />
+                       Text="Glide through the easy to use interface with the click of a button and connect to the fastest free VPN available provided by SellSN.io" />
         </Grid>
         <Button Command="{Binding ForwardCommand}" Style="{DynamicResource MaterialDesignRaisedButton}"
                 VerticalAlignment="Top" HorizontalAlignment="Center" Background="Transparent" Cursor="Arrow"

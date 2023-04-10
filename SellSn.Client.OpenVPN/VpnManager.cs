@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Threading;
 using System.Threading.Tasks;
-using LightVPN.Client.Debug;
+using SellSn.Client.Debug;
 using SellSn.Client.OpenVPN.EventArgs;
 using SellSn.Client.OpenVPN.Exceptions;
 using SellSn.Client.OpenVPN.Interfaces;
@@ -173,7 +173,7 @@ public sealed class VpnManager : IVpnManager, IAsyncDisposable
     /// </summary>
     public async ValueTask DisposeAsync()
     {
-        DebugLogger.Write("lvpn-client-ovpn", "async dispose has been called");
+        DebugLogger.Write("svpn-client-ovpn", "async dispose has been called");
 
         if (IsConnected || IsConnecting) await DisconnectAsync();
 
@@ -189,7 +189,7 @@ public sealed class VpnManager : IVpnManager, IAsyncDisposable
     {
         try
         {
-            DebugLogger.Write("lvpn-client-ovpn", "killing other inferior openvpn processes >:)");
+            DebugLogger.Write("svpn-client-ovpn", "killing other inferior openvpn processes >:)");
             Process.GetProcessesByName("openvpn").ToList().ForEach(x => x.Kill());
         }
         catch

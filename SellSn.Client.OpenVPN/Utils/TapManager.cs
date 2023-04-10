@@ -5,7 +5,7 @@ using System.Management;
 using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
-using LightVPN.Client.Debug;
+using SellSn.Client.Debug;
 using SellSn.Client.OpenVPN.Models;
 using SellSn.Client.OpenVPN.Resources;
 using SellSn.Client.Windows.Common;
@@ -218,7 +218,7 @@ public sealed class TapManager
     {
         if (string.IsNullOrWhiteSpace(e.Data)) return;
 
-        DebugLogger.Write("lvpn-client-ovpn-tapman", $"create_vpn_adap failed: {e.Data}");
+        DebugLogger.Write("svpn-client-ovpn-tapman", $"create_vpn_adap failed: {e.Data}");
 
         _tapCtlProcess.Kill();
 
@@ -255,7 +255,7 @@ public sealed class TapManager
                         new InvalidOperationException("TAP adapter doesn't exist!")));
                 break;
             case var guid when Guid.TryParse(guid, out var _):
-                DebugLogger.Write("lvpn-client-ovpn-tapman", "tapctl exited, tap created it seems.");
+                DebugLogger.Write("svpn-client-ovpn-tapman", "tapctl exited, tap created it seems.");
                 OnSuccess?.Invoke(this);
                 break;
         }

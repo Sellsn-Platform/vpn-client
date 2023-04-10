@@ -14,11 +14,11 @@ internal static class Program
         try
         {
             Console.WriteLine(
-                $"LightVPN startup helper [version {Assembly.GetEntryAssembly()?.GetName().Version}]");
-            Console.WriteLine("Copyright 2021 (C) Light Technologies, LLC.\n");
+                $"SellSN-VPN startup helper [version {Assembly.GetEntryAssembly()?.GetName().Version}]");
+            Console.WriteLine("Copyright 2023 (C) Comtechna, UAB.\n");
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("More information: https://lightvpn.org/support/articles/startup-helper\n");
+            Console.WriteLine("More information: https://sellsn.cloud/startup-helper\n");
             Console.ResetColor();
 
             Console.WriteLine("[*] checking args");
@@ -60,14 +60,14 @@ internal static class Program
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(
-                "[!] a win32 exception has been thrown, this could be due to pressing 'No' on the user account control dialog. as a result lightvpn will not start this time.");
+                "[!] a win32 exception has been thrown, this could be due to pressing 'No' on the user account control dialog. as a result SellSN-VPN will not start this time.");
             return 2;
         }
         catch (Exception e)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(
-                $"[!] an exception has been thrown!\n\n[!] please head over to https://github.com/lighttechnologies/windows-app and open an issue containing the following:\n\n{e}\n\n[*] exiting...");
+                $"[!] an exception has been thrown!\n\n[!] please head over to https://github.com/sellsn-platform/vpn-client and open an issue containing the following:\n\n{e}\n\n[*] exiting...");
             return 3;
         }
         finally
