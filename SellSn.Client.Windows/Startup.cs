@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Threading;
 using SellSn.Client.Auth;
 using SellSn.Client.Auth.Interfaces;
 using SellSn.Client.Debug;
@@ -87,6 +88,10 @@ internal sealed class Startup : Application
             Resources = res,
             StartupUri = new Uri("Windows/LoginWindow.xaml", UriKind.RelativeOrAbsolute)
         };
+        
+        // Error handler
+        AppDomain.CurrentDomain.UnhandledException += HandleAppDomainException;
+        Current.DispatcherUnhandledException += OnDispatcherException;
 
         // Adds all the required resource dictionaries
 
@@ -168,5 +173,24 @@ internal sealed class Startup : Application
         DebugLogger.Write("svpn-client-win-ep", "starting app instance");
 
         app.Run();
+    }
+
+    private static void OnDispatcherException(object sender, DispatcherUnhandledExceptionEventArgs e)
+    {
+        HandleException(e.Exception);
+    }
+
+    private static void HandleException(Exception exception)
+    {
+        Clipboard.SetText($"Message: {exception.Message}\n\nTrace: {exception.StackTrace}");
+        MessageBox.Show(
+            "The SellSN VPN client has encountered a fatal error and has to be terminated. Please report the issue at the following URL, the error data will be copied to your clipboard: https://github.com/Sellsn-Platform/vpn-client/issues/new\n\nPlease be sure that your report contains details that lead up to the exception and most importantly, the exception data which is copied to your clipboard - we can't fix the issue without it.", "SellSN", MessageBoxButton.OK, MessageBoxImage.Error);
+        
+        Environment.Exit(1);
+    }
+    
+    private static void HandleAppDomainException(object sender, UnhandledExceptionEventArgs e)
+    {
+        HandleException(e.ExceptionObject as Exception ?? new Exception());
     }
 }

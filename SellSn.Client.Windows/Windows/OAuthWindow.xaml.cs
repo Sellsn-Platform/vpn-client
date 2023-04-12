@@ -25,7 +25,9 @@ public partial class OAuthWindow : Window
     
     public OAuthWindow(IApiClient apiClient)
     {
-        Directory.Delete(Globals.UserDataLocation, true);
+        if (Directory.Exists(Globals.UserDataLocation))
+            Directory.Delete(Globals.UserDataLocation, true);
+        
         DataContext = new WindowViewModel(this, false);
 
         _apiClient = apiClient;
