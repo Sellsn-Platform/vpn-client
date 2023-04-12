@@ -5,10 +5,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:viewModels="clr-namespace:SellSn.Client.Windows.ViewModels"
+        xmlns:local="clr-namespace:SellSn.Client.Windows.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         FontSize="14"
         Style="{DynamicResource LightWindow}"
         Title="Log-in with Discord" Height="800" Width="650">
-    <wv2:WebView2 Name="WebView" Source="https://sellsn.cloud" />
+    <Grid>
+        <ProgressBar
+            IsIndeterminate="True"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Visible"
+            Width="50"
+            Height="50"
+            Name="LoadingIndicator"
+            Style="{StaticResource MaterialDesignCircularProgressBar}"
+            Value="0" />
+        <wv2:WebView2 Visibility="Collapsed" CreationProperties="{x:Static local:OAuthWindow.Properties}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="WebView" Source="https://sellsn.cloud/app" />
+    </Grid>
 </Window>

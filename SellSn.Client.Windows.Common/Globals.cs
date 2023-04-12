@@ -76,6 +76,11 @@ public static class Globals
     public static bool IsBeta { get; set; } = false;
 
     /// <summary>
+    /// The UDF (User Data Folder) location for the Edge WebView2 component
+    /// </summary>
+    public static readonly string UserDataLocation = Path.Combine(AppSettingsDirectory, "EdgeUDF");
+
+    /// <summary>
     ///     Instance of a TrayViewModel so we can modify its properties from other ViewModels
     /// </summary>
     public static object TrayViewModel { get; set; }

@@ -34,6 +34,9 @@ ShowLanguageDialog=auto
 InternalCompressLevel=ultra64
 CompressionThreads=2
 MinVersion=0,6.2
+WizardStyle=modern
+UninstallDisplayName=SellSN VPN
+UninstallDisplayIcon={app}\sellsnvpn64.exe
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
