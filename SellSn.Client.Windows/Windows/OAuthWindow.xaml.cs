@@ -19,8 +19,7 @@ public partial class OAuthWindow : Window
     private readonly IApiClient _apiClient;
     public static readonly CoreWebView2CreationProperties Properties = new()
     {
-        UserDataFolder = Globals.UserDataLocation,
-        IsInPrivateModeEnabled = true
+        UserDataFolder = Globals.UserDataLocation
     };
     
     public OAuthWindow(IApiClient apiClient)

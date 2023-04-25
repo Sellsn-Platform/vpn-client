@@ -102,6 +102,8 @@ internal sealed class LoginViewModel : WindowViewModel
                         // Install drivers if not installed
                         if (!TapManager.IsDriverInstalled())
                         {
+                            await Globals.Container.GetInstance<ICacheService>().CacheOpenVpnDriversAsync();
+                            
                             StatusText = "Installing drivers";
                             await Globals.Container.GetInstance<IVpnManager>().TapManager.InstallTapDriverAsync();
                         }
