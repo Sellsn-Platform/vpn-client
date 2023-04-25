@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MaterialDesignThemes.Wpf;
@@ -45,8 +46,6 @@ internal sealed class MainViewModel : WindowViewModel
         {
             if (Globals.Container.GetInstance<IVpnManager>().IsConnected)
                 _connectionState = ConnectionState.Connected;
-            else if (_connectionState != ConnectionState.Connecting)
-                _connectionState = ConnectionState.Disconnected;
 
             return _connectionState;
         }
@@ -157,9 +156,23 @@ internal sealed class MainViewModel : WindowViewModel
                 {
                     try
                     {
-                        if (ConnectionState is ConnectionState.Connecting or ConnectionState.Disconnecting or
-                            ConnectionState.Connected) return;
+                        if (ConnectionState is ConnectionState.Connecting or ConnectionState.Disconnecting) return;
 
+                        var trayViewModel = (TrayViewModel)Globals.TrayViewModel;
+                        
+                        if (ConnectionState == ConnectionState.Connected)
+                        {
+                            trayViewModel.ConnectionState = ConnectionState.Disconnecting;
+                            
+                            ConnectionState = ConnectionState.Disconnecting;
+                            
+                            // Disconnect
+                            var vpnManagerService = Globals.Container.GetInstance<IVpnManager>();
+                            await vpnManagerService.DisconnectAsync();
+
+                            await Task.Delay(1500);
+                        }
+                        
                         var vpnService = Globals.Container.GetInstance<IOpenVpnService>();
 
                         if (args is not DisplayVpnServer server) return;
@@ -167,9 +180,8 @@ internal sealed class MainViewModel : WindowViewModel
                         LastServer = server.ServerName;
 
                         ConnectionState = ConnectionState.Connecting;
-
-                        if (Globals.TrayViewModel is TrayViewModel trayViewModel)
-                            trayViewModel.ConnectionState = ConnectionState.Connecting;
+                        
+                        trayViewModel.ConnectionState = ConnectionState.Connecting;
 
                         if (Globals.Container.GetInstance<IConfigurationManager<AppConfiguration>>().Read()
                             .IsDiscordRpcEnabled)
