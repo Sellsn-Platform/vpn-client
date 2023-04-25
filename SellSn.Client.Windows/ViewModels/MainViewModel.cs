@@ -42,13 +42,7 @@ internal sealed class MainViewModel : WindowViewModel
 
     public ConnectionState ConnectionState
     {
-        get
-        {
-            if (Globals.Container.GetInstance<IVpnManager>().IsConnected)
-                _connectionState = ConnectionState.Connected;
-
-            return _connectionState;
-        }
+        get => _connectionState;
         set
         {
             _connectionState = value;
